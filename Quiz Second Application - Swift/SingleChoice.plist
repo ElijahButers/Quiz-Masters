@@ -10,6 +10,12 @@
 			<key>Question</key>
 			<string>What color is tomato?</string>
 		</dict>
+		<dict>
+			<key>CorrectAnswer</key>
+			<string>Blue</string>
+			<key>Question</key>
+			<string>What color is sky?</string>
+		</dict>
 	</array>
 </dict>
 </plist>

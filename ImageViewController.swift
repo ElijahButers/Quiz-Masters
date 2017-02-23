@@ -14,19 +14,19 @@ class ImageViewController: UIViewController {
     
     @IBOutlet var answersButtons: [UIButton]!
     
-    @IBAction func answerButtonHandler(sender: UIButton) {
+    @IBAction func answerButtonHandler(_ sender: UIButton) {
         
         if sender.titleLabel?.text == correctAnswer {
             print("Correct")
         } else {
-            sender.backgroundColor = UIColor.redColor()
+            sender.backgroundColor = UIColor.red
             print("Wrong")
         }
         
         for button in answersButtons {
-            button.enabled = false
+            button.isEnabled = false
             if button.titleLabel?.text == correctAnswer {
-                button.backgroundColor = UIColor.greenColor()
+                button.backgroundColor = UIColor.green
             }
         }
     }
@@ -34,11 +34,11 @@ class ImageViewController: UIViewController {
 
     @IBOutlet weak var cardButton: UIButton!
     
-    @IBAction func cardButtonHandler(sender: UIButton) {
+    @IBAction func cardButtonHandler(_ sender: UIButton) {
         
-        cardButton.enabled = true
+        cardButton.isEnabled = true
         if questionIdx < (imgArray?.count)! - 1 {
-            questionIdx++
+            questionIdx += 1
         } else {
             questionIdx = 0
         }
@@ -63,7 +63,7 @@ class ImageViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(patternImage: UIImage(named: "Night sky-png")!)
         
-        cardButton.enabled = false
+        cardButton.isEnabled = false
         nextQuestion()
     }
 
@@ -83,10 +83,10 @@ class ImageViewController: UIViewController {
 
     
     func titlesForButtons() {
-        for (idx, button) in EnumerateSequence(answersButtons) {
-            button.titleLabel?.lineBreakMode = .ByWordWrapping
-            button.setTitle(answers[idx], forState: .Normal)
-            button.enabled = true
+        for (idx, button) in answersButtons.enumerated() {
+            button.titleLabel?.lineBreakMode = .byWordWrapping
+            button.setTitle(answers[idx], for: UIControlState())
+            button.isEnabled = true
             button.backgroundColor = UIColor(red: 83.0/255.0, green: 184.0/255.0, blue: 224.0/255.0, alpha: 1.0)
         }
         

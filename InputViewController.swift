@@ -18,11 +18,11 @@ class InputViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var cardButton: UIButton!
     
-    @IBAction func cardButtonHandler(sender: UIButton) {
+    @IBAction func cardButtonHandler(_ sender: UIButton) {
         
-        cardButton.enabled = true
+        cardButton.isEnabled = true
         if questionIdx < (scArray?.count)! - 1 {
-            questionIdx++
+            questionIdx += 1
         } else {
             questionIdx = 0
         }
@@ -44,14 +44,14 @@ class InputViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(InputViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(InputViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         inputTextField.delegate = self
         
         titlesForLabels()
         
-        cardButton.enabled = false
+        cardButton.isEnabled = false
         nextQuestion()
 
     }
@@ -74,51 +74,51 @@ class InputViewController: UIViewController, UITextFieldDelegate {
     func titlesForLabels() {
         questionLabel.text = question
         correctAnswerLabel.text = correctAnswer
-        correctAnswerLabel.hidden = true
+        correctAnswerLabel.isHidden = true
         
         inputTextField.text = nil
-        inputTextField.enabled = true
+        inputTextField.isEnabled = true
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        let userInfo = notification.userInfo!
+    func keyboardWillShow(_ notification: Notification) {
+        let userInfo = (notification as NSNotification).userInfo!
         
-        let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
             self.view.frame.origin.y = -keyboardFrame.size.height
         })
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(_ notification: Notification) {
         
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
             self.view.frame.origin.y = 0
         })
 
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
         enteredAnswer = textField.text
         
-        textField.enabled = false
-        cardButton.enabled = true
+        textField.isEnabled = false
+        cardButton.isEnabled = true
         
         checkForCorrectAnswer()
         return true
     }
     
     func checkForCorrectAnswer() {
-        if enteredAnswer?.lowercaseString == correctAnswer!.lowercaseString {
+        if enteredAnswer?.lowercased() == correctAnswer!.lowercased() {
             print("Right")
-            correctAnswerLabel.textColor = UIColor.greenColor()
+            correctAnswerLabel.textColor = UIColor.green
         } else {
             print("Wrong")
-            correctAnswerLabel.textColor = UIColor.redColor()
+            correctAnswerLabel.textColor = UIColor.red
         }
-        correctAnswerLabel.hidden = false
+        correctAnswerLabel.isHidden = false
     }
 
     

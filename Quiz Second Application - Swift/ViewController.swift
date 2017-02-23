@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -33,35 +33,46 @@ class ViewController: UIViewController {
     }
     
     func loadQuizData() {
-        //Multiple Choice Data
-        let pathMC = NSBundle.mainBundle().pathForResource("MultipleChoice", ofType: "plist")
-        let dictMC = NSDictionary(contentsOfFile: pathMC!)
-        mcArray = dictMC!["Questions"]!.mutableCopy() as? Array
         
-        //Single Choice Data
-        let pathSC = NSBundle.mainBundle().pathForResource("SingleChoice", ofType: "plist")
-        let dictSC = NSDictionary(contentsOfFile: pathSC!)
-        scArray = dictSC!["Questions"]!.mutableCopy() as? Array
+    //Multiple Choice Data
         
-        //Right Or Wrong Data
-        let pathROW = NSBundle.mainBundle().pathForResource("RightOrWrong", ofType: "plist")
-        let dictROW = NSDictionary(contentsOfFile: pathROW!)
-        rowArray = dictROW!["Questions"]!.mutableCopy() as? Array
-//
-//        //Image Quiz Data
-//        let pathIMG = NSBundle.mainBundle().pathForResource("ImageQuiz", ofType: "plist")
-//        let dictIMG = NSDictionary(contentsOfFile: pathIMG!)
-//        imgArray = dictIMG!["Questions"]!.mutableCopy() as? Array
+        if let pathMC = Bundle.main.path(forResource: "MultipleChoice", ofType: "plist") {
+            if let dictMC = NSDictionary(contentsOfFile: pathMC) as? [String: AnyObject] {
+                mcArray = dictMC["Questions"] as? Array
+            }
+        }
+        
+    //Single Choice Data
+        
+        if let pathSC = Bundle.main.path(forResource: "SingleChoice", ofType: "plist") {
+            if let dictSC = NSDictionary(contentsOfFile: pathSC) as? [String: AnyObject] {
+                scArray = dictSC["Questions"] as? Array
+            }
+        }
+    //Right Or Wrong Data
+
+        if let pathROW = Bundle.main.path(forResource: "RightOrWrong", ofType: "plist") {
+            if let dictROW = NSDictionary(contentsOfFile: pathROW) as? [String: AnyObject] {
+                rowArray = dictROW["Questions"] as? Array
+            }
+        }
+
+    //Image Quiz Data
+
+        if let pathIMG = Bundle.main.path(forResource: "ImageQuiz", ofType: "plist") {
+            if let dictIMG = NSDictionary(contentsOfFile: pathIMG) as? [String: AnyObject] {
+                imgArray = dictIMG["Questions"] as? Array
+            }
+        }
         
         check()
-        
     }
     
     func check() {
-        print(mcArray)
-        print(scArray)
-        print(imgArray)
-        print(rowArray)
+        print(mcArray as Any)
+        print(scArray as Any )
+        print(imgArray as Any)
+        print(rowArray as Any)
     }
 
 

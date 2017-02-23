@@ -6,7 +6,7 @@
 //  Copyright © 2015 Elijah Buters. All rights reserved.
 //
 
-var mcArray: Array<[String: AnyObject]>?
-var scArray: Array<[String: AnyObject]>?
+var mcArray: Array<[String: AnyObject]>!
+var scArray: Array <[String: AnyObject]>?
 var imgArray: Array<[String: AnyObject]>?
-var rowArray: Array<[String:AnyObject]>?
+var rowArray: Array<[String: AnyObject]>?

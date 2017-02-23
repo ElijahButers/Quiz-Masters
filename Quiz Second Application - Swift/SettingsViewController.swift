@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet var gameModeButtons: [UIButton]!
     
-    @IBAction func gameModeButtonHadler(sender: UIButton) {
+    @IBAction func gameModeButtonHadler(_ sender: UIButton) {
         
         for button in gameModeButtons {
             if sender != button {
@@ -24,21 +24,21 @@ class SettingsViewController: UIViewController {
             }
         }
     }
-    @IBAction func playButtonHandler(sender: UIButton) {
+    @IBAction func playButtonHandler(_ sender: UIButton) {
         
         var vc: UIViewController?
         switch gameMode {
         case 0:
-            vc = storyboard?.instantiateViewControllerWithIdentifier("multipleChoiceViewController") as! MultipleChoiceViewController
+            vc = storyboard?.instantiateViewController(withIdentifier: "multipleChoiceViewController") as! MultipleChoiceViewController
             break
         case 1:
-            vc = storyboard?.instantiateViewControllerWithIdentifier("rightOrWrongViewController") as! RightOrWrongViewController
+            vc = storyboard?.instantiateViewController(withIdentifier: "rightOrWrongViewController") as! RightOrWrongViewController
             break
         case 2:
-            vc = storyboard?.instantiateViewControllerWithIdentifier("inputViewController") as! InputViewController
+            vc = storyboard?.instantiateViewController(withIdentifier: "inputViewController") as! InputViewController
             break
         case 3:
-            vc = storyboard?.instantiateViewControllerWithIdentifier("imageViewController") as! ImageViewController
+            vc = storyboard?.instantiateViewController(withIdentifier: "imageViewController") as! ImageViewController
             break
         default:
             break
@@ -60,12 +60,12 @@ class SettingsViewController: UIViewController {
 
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         navigationController?.setNavigationBarHidden(false, animated: false)
         
-        for (idx, button) in EnumerateSequence(gameModeButtons) {
+        for (idx, button) in gameModeButtons.enumerated() {
             button.tag = idx
             if button.tag != 0 {
                 button.alpha = 0.7

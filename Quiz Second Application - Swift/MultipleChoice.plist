@@ -3,6 +3,33 @@
 <plist version="1.0">
 <dict>
 	<key>Questions</key>
-	<array/>
+	<array>
+		<dict>
+			<key>CorrectAnswer</key>
+			<string>1</string>
+			<key>Question</key>
+			<string>Who are you?</string>
+			<key>Answers</key>
+			<array>
+				<string>4</string>
+				<string>3</string>
+				<string>1</string>
+				<string>2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Question</key>
+			<string>What&apos;s up?</string>
+			<key>CorrectAnswer</key>
+			<string>2015</string>
+			<key>Answers</key>
+			<array>
+				<string>Not much</string>
+				<string>Ok</string>
+				<string>Cool</string>
+				<string>Alright</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

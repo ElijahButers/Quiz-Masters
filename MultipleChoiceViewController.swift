@@ -13,43 +13,42 @@ class MultipleChoiceViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet var answerButtons: [UIButton]!
-    @IBAction func answerButtonHandler(sender: UIButton) {
+    
+    var correctAnswer: String?
+    var question: String?
+    var answers = [String]()
+    
+    var questionIdx = 0
+    
+    @IBAction func answerButtonHandler(_ sender: UIButton) {
         
         if sender.titleLabel?.text == correctAnswer {
             print("Correct")
         } else {
-            sender.backgroundColor = UIColor.redColor()
+            sender.backgroundColor = UIColor.red
             print("Wrong Answer")
         }
         for button in answerButtons {
-            button.enabled = false
+            button.isEnabled = false
             if button.titleLabel?.text == correctAnswer {
-                button.backgroundColor = UIColor.greenColor()
+                button.backgroundColor = UIColor.green
             }
         }
-        cardButton.enabled = true
+        cardButton.isEnabled = true
     }
 
     @IBOutlet weak var cardButton: UIButton!
     
-    @IBAction func cardButtonHandler(sender: UIButton) {
+    @IBAction func cardButtonHandler(_ sender: UIButton) {
         
-        cardButton.enabled = true
-        if questionIdx < (mcArray?.count)! - 1 {
-            questionIdx++
+        cardButton.isEnabled = true
+        if questionIdx < mcArray!.count - 1 {
+            questionIdx += 1
         } else {
             questionIdx = 0
         }
         nextQuestion()
     }
-    
-    //var correctAnswer = "2015"
-    var correctAnswer: String?
-    var question: String?
-    //var answers = ["1990", "1995", "2005", "2015"]
-    var answers = [String]()
-    
-    var questionIdx = 0
     
     
     override func viewDidLoad() {
@@ -58,8 +57,8 @@ class MultipleChoiceViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(patternImage: UIImage(named: "Night sky-png")!)
         
-        cardButton.enabled = false
-        titlesForButtons()
+        cardButton.isEnabled = false
+        nextQuestion()
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,10 +77,11 @@ class MultipleChoiceViewController: UIViewController {
     }
     
     func titlesForButtons() {
-        for (idx, button) in EnumerateSequence(answerButtons) {
-            button.titleLabel?.lineBreakMode = .ByWordWrapping
-            button.setTitle(answers[idx], forState: .Normal)
-            button.enabled = true
+        
+        for (idx, button) in answerButtons.enumerated() {
+            button.titleLabel?.lineBreakMode = .byWordWrapping
+            button.setTitle(answers[idx], for: .normal)
+            button.isEnabled = true
             button.backgroundColor = UIColor(red: 83.0/255.0, green: 184.0/255.0, blue: 224.0/225.0, alpha: 1.0)
         }
         

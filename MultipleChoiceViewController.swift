@@ -88,6 +88,7 @@ class MultipleChoiceViewController: UIViewController {
         }
         
         questionLabel.text = question
+        startTimer()
     }
     
     func startTimer() {

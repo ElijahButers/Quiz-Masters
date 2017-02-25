@@ -96,6 +96,7 @@ class MultipleChoiceViewController: UIViewController {
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (alert: UIAlertAction!) in
         })
         alertController.addAction(ok)
+        self.present(alertController, animated: true, completion: nil)
     }
     
 

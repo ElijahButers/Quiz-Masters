@@ -58,6 +58,7 @@ class MultipleChoiceViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(patternImage: UIImage(named: "Night sky-png")!)
         
+        progressView.transform = CGAffineTransform(scaleX: 1, y: 10)
         cardButton.isEnabled = false
         nextQuestion()
     }

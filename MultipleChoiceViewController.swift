@@ -90,6 +90,12 @@ class MultipleChoiceViewController: UIViewController {
         questionLabel.text = question
     }
     
+    func startTimer() {
+        
+        progressView.progress = 1.0
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: Selector(("updateProgressView")), userInfo: nil, repeats: true)
+    }
+    
     func showAlert() {
         
         let alertController = UIAlertController(title: "Out of time!", message: "Too slow!", preferredStyle: .alert)

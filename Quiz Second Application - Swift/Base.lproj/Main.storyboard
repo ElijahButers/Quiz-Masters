@@ -360,6 +360,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cardButton" destination="xLq-30-iHy" id="Nh1-ON-Hhf"/>
+                        <outlet property="progressView" destination="7rY-Sy-iWh" id="XbX-og-txn"/>
                         <outlet property="questionLabel" destination="g0s-jc-h2d" id="X4r-KL-sX8"/>
                         <outletCollection property="answerButtons" destination="aMB-vd-pu5" collectionClass="NSMutableArray" id="dHb-xQ-b2z"/>
                         <outletCollection property="answerButtons" destination="cSB-aA-lQK" collectionClass="NSMutableArray" id="HWs-pO-RGe"/>

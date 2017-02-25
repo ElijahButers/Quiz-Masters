@@ -13,6 +13,7 @@ class MultipleChoiceViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet var answerButtons: [UIButton]!
+    @IBOutlet weak var progressView: UIProgressView!
     
     var correctAnswer: String?
     var question: String?

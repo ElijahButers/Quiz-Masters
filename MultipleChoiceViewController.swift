@@ -18,8 +18,8 @@ class MultipleChoiceViewController: UIViewController {
     var correctAnswer: String?
     var question: String?
     var answers = [String]()
-    
     var questionIdx = 0
+    var timer = Timer()
     
     @IBAction func answerButtonHandler(_ sender: UIButton) {
         

@@ -90,6 +90,14 @@ class MultipleChoiceViewController: UIViewController {
         questionLabel.text = question
     }
     
+    func showAlert() {
+        
+        let alertController = UIAlertController(title: "Out of time!", message: "Too slow!", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (alert: UIAlertAction!) in
+        })
+        alertController.addAction(ok)
+    }
+    
 
     /*
     // MARK: - Navigation

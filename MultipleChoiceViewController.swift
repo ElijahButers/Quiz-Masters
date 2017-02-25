@@ -23,6 +23,7 @@ class MultipleChoiceViewController: UIViewController {
     
     @IBAction func answerButtonHandler(_ sender: UIButton) {
         
+        timer.invalidate()
         if sender.titleLabel?.text == correctAnswer {
             print("Correct")
         } else {

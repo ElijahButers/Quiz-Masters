@@ -93,7 +93,13 @@ class MultipleChoiceViewController: UIViewController {
     func startTimer() {
         
         progressView.progress = 1.0
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: Selector(("updateProgressView")), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(MultipleChoiceViewController.updateProgressView), userInfo: nil, repeats: true)
+    }
+    
+    func updateProgressView() {
+        
+        progressView.progress -= 0.01/30
+        if progressView.progress <= 0 {
     }
     
     func showAlert() {

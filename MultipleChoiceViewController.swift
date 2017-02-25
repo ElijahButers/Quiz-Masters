@@ -100,13 +100,22 @@ class MultipleChoiceViewController: UIViewController {
         
         progressView.progress -= 0.01/30
         if progressView.progress <= 0 {
+            outOfTime()
+        }
     }
         
     func outOfTime() {
         
         timer.invalidate()
         showAlert()
+        disableButtons()
+    }
+    
+    func disableButtons() {
         
+        for button in answerButtons {
+            button.isEnabled = false
+        }
     }
     
     func showAlert() {

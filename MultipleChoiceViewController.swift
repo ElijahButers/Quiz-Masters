@@ -101,6 +101,13 @@ class MultipleChoiceViewController: UIViewController {
         progressView.progress -= 0.01/30
         if progressView.progress <= 0 {
     }
+        
+    func outOfTime() {
+        
+        timer.invalidate()
+        showAlert()
+        
+    }
     
     func showAlert() {
         

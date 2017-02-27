@@ -22,12 +22,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-ak-9kX">
-                                <rect key="frame" x="37.5" y="303.5" width="300" height="60"/>
+                                <rect key="frame" x="38" y="304" width="300" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Bbh-sb-7bx"/>
-                                    <constraint firstAttribute="width" constant="300" id="XhO-XS-OOb"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                 <state key="normal" title="Play Game">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,18 +33,44 @@
                                     <segue destination="lmc-WY-gC0" kind="show" id="Mau-rW-6E7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3IW-am-UoP">
+                                <rect key="frame" x="37" y="379" width="300" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ITr-dq-w0V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeR-hC-Y4u">
+                                <rect key="frame" x="37" y="456" width="300" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sCv-ak-9kX" firstAttribute="centerX" secondItem="Y8n-6c-GrS" secondAttribute="centerX" id="bse-23-v6z"/>
-                            <constraint firstItem="sCv-ak-9kX" firstAttribute="centerY" secondItem="Y8n-6c-GrS" secondAttribute="centerY" id="p99-RJ-VH4"/>
+                            <constraint firstItem="3IW-am-UoP" firstAttribute="centerX" secondItem="Y8n-6c-GrS" secondAttribute="centerX" id="0CS-ut-Z1M"/>
+                            <constraint firstItem="3IW-am-UoP" firstAttribute="leading" secondItem="Y8n-6c-GrS" secondAttribute="leadingMargin" constant="21" id="CpL-jU-htJ"/>
+                            <constraint firstItem="eSA-QG-qqi" firstAttribute="top" secondItem="QeR-hC-Y4u" secondAttribute="bottom" constant="151" id="MyS-hl-GGx"/>
+                            <constraint firstItem="sCv-ak-9kX" firstAttribute="top" secondItem="fsH-LQ-lju" secondAttribute="bottom" constant="240" id="OU1-1o-hSB"/>
+                            <constraint firstItem="sCv-ak-9kX" firstAttribute="leading" secondItem="Y8n-6c-GrS" secondAttribute="leadingMargin" constant="22" id="cQZ-xR-ACI"/>
+                            <constraint firstItem="3IW-am-UoP" firstAttribute="trailing" secondItem="QeR-hC-Y4u" secondAttribute="trailing" id="l9J-VM-mgU"/>
+                            <constraint firstItem="QeR-hC-Y4u" firstAttribute="top" secondItem="3IW-am-UoP" secondAttribute="bottom" constant="17" id="pCb-HB-0xL"/>
+                            <constraint firstItem="sCv-ak-9kX" firstAttribute="centerX" secondItem="Y8n-6c-GrS" secondAttribute="centerX" id="ruI-UD-RRO"/>
+                            <constraint firstItem="3IW-am-UoP" firstAttribute="top" secondItem="sCv-ak-9kX" secondAttribute="bottom" constant="15" id="shE-0f-MfW"/>
+                            <constraint firstItem="sCv-ak-9kX" firstAttribute="centerY" secondItem="Y8n-6c-GrS" secondAttribute="centerY" id="t7j-GT-8RC"/>
+                            <constraint firstItem="3IW-am-UoP" firstAttribute="leading" secondItem="QeR-hC-Y4u" secondAttribute="leading" id="x8l-aS-wAA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rra-q6-X7p"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tD-y6-gkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="219" y="-136"/>
+            <point key="canvasLocation" x="218.40000000000001" y="-136.28185907046478"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="w9t-rb-FD5">

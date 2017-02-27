@@ -28,6 +28,7 @@ class MultipleChoiceViewController: UIViewController {
         timer.invalidate()
         if sender.titleLabel?.text == correctAnswer {
             print("Correct")
+            currentScore += 1
         } else {
             sender.backgroundColor = UIColor.red
             print("Wrong Answer")

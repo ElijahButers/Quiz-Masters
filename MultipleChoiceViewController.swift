@@ -33,6 +33,7 @@ class MultipleChoiceViewController: UIViewController {
         } else {
             sender.backgroundColor = UIColor.red
             print("Wrong Answer")
+            showAlert(false)
         }
         for button in answerButtons {
             button.isEnabled = false

@@ -113,7 +113,7 @@ class MultipleChoiceViewController: UIViewController {
     func outOfTime() {
         
         timer.invalidate()
-        showAlert()
+        showAlert(true)
         disableButtons()
     }
     
@@ -124,7 +124,7 @@ class MultipleChoiceViewController: UIViewController {
         }
     }
     
-    func showAlert() {
+    func showAlert(_ slow: Bool) {
         
         let alertController = UIAlertController(title: "Out of time!", message: "Too slow!", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (alert: UIAlertAction!) in

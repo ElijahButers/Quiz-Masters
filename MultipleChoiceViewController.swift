@@ -29,6 +29,7 @@ class MultipleChoiceViewController: UIViewController {
         if sender.titleLabel?.text == correctAnswer {
             print("Correct")
             currentScore += 1
+            cardButton.isEnabled = true
         } else {
             sender.backgroundColor = UIColor.red
             print("Wrong Answer")
@@ -39,7 +40,7 @@ class MultipleChoiceViewController: UIViewController {
                 button.backgroundColor = UIColor.green
             }
         }
-        cardButton.isEnabled = true
+    
     }
 
     @IBOutlet weak var cardButton: UIButton!

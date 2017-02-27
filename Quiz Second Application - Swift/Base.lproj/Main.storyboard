@@ -67,6 +67,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rra-q6-X7p"/>
+                    <connections>
+                        <outlet property="highScoreLabel" destination="QeR-hC-Y4u" id="18h-Z1-3db"/>
+                        <outlet property="scoreLabel" destination="3IW-am-UoP" id="1Ie-m9-A2t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tD-y6-gkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

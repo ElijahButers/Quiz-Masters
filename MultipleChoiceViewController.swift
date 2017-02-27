@@ -20,6 +20,8 @@ class MultipleChoiceViewController: UIViewController {
     var answers = [String]()
     var questionIdx = 0
     var timer = Timer()
+    var currentScore = 0
+    var highScore = UserDefaults.standard.integer(forKey: "highscore")
     
     @IBAction func answerButtonHandler(_ sender: UIButton) {
         

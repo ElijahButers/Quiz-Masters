@@ -131,6 +131,7 @@ class MultipleChoiceViewController: UIViewController {
             highScore = currentScore
             UserDefaults.standard.integer(forKey: "highscore")
         }
+        UserDefaults.standard.integer(forKey: "score")
         
         let alertController = UIAlertController(title: "Out of time!", message: "Too slow!", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (alert: UIAlertAction!) in

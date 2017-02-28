@@ -27,6 +27,12 @@ class ViewController: UIViewController {
         super.viewWillAppear(true)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        let score = UserDefaults.standard.integer(forKey: "score")
+        let highScore = UserDefaults.standard.integer(forKey: "highscore")
+        
+        scoreLabel.text = "Score: \(score)"
+        highScoreLabel.text = "High score: \(highScore)"
     }
 
     override func didReceiveMemoryWarning() {

@@ -23,8 +23,6 @@ class ViewController: UIViewController {
         loadQuizData()
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         

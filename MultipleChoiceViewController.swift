@@ -143,9 +143,15 @@ class MultipleChoiceViewController: UIViewController {
         
         let alertController = UIAlertController(title: title, message: "Score: \(currentScore) \n HighScore: \(highScore)", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (alert: UIAlertAction!) in
+            self.backToMenu()
         })
         alertController.addAction(ok)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func backToMenu() {
+        
+        _ = navigationController?.popToRootViewController(animated: true)
     }
     
 

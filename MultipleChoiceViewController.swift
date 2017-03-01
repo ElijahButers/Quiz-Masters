@@ -66,6 +66,8 @@ class MultipleChoiceViewController: UIViewController {
         
         progressView.transform = CGAffineTransform(scaleX: 1, y: 10)
         cardButton.isEnabled = false
+        
+        mcArray.shuffle()
         nextQuestion()
     }
 

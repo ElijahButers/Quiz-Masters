@@ -257,15 +257,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VeA-ZG-oHp">
                                 <rect key="frame" x="12" y="72" width="351" height="239.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0s-jc-h2d">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0s-jc-h2d">
                                         <rect key="frame" x="8" y="8" width="335" height="223.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLq-30-iHy">
-                                        <rect key="frame" x="8" y="8" width="552" height="190"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLq-30-iHy">
+                                        <rect key="frame" x="0.0" y="8" width="351" height="232"/>
                                         <connections>
                                             <action selector="cardButtonHandler:" destination="Wdn-k8-Lam" eventType="touchUpInside" id="72b-rr-VkK"/>
                                         </connections>
@@ -274,7 +273,11 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="g0s-jc-h2d" secondAttribute="trailing" constant="8" id="JZd-Ji-tmf"/>
+                                    <constraint firstItem="xLq-30-iHy" firstAttribute="leading" secondItem="VeA-ZG-oHp" secondAttribute="leading" id="PnE-yg-fZL"/>
                                     <constraint firstItem="g0s-jc-h2d" firstAttribute="top" secondItem="VeA-ZG-oHp" secondAttribute="top" constant="8" id="RQb-QQ-us8"/>
+                                    <constraint firstItem="xLq-30-iHy" firstAttribute="top" secondItem="VeA-ZG-oHp" secondAttribute="top" constant="8" id="Rkt-H4-RKs"/>
+                                    <constraint firstAttribute="bottom" secondItem="xLq-30-iHy" secondAttribute="bottom" id="WPR-ZC-Xyn"/>
+                                    <constraint firstAttribute="trailing" secondItem="xLq-30-iHy" secondAttribute="trailing" id="aaU-kG-OEe"/>
                                     <constraint firstAttribute="bottom" secondItem="g0s-jc-h2d" secondAttribute="bottom" constant="8" id="dxo-D3-yLj"/>
                                     <constraint firstItem="g0s-jc-h2d" firstAttribute="leading" secondItem="VeA-ZG-oHp" secondAttribute="leading" constant="8" id="mfz-A3-Uya"/>
                                 </constraints>
@@ -396,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujr-pL-eRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1549" y="-803"/>
+            <point key="canvasLocation" x="1548" y="-803.74812593703155"/>
         </scene>
         <!--Right Or Wrong-->
         <scene sceneID="xm1-q9-nNh">

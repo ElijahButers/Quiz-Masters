@@ -5,6 +5,32 @@
 	<key>Questions</key>
 	<array>
 		<dict>
+			<key>Question</key>
+			<string>Which town is the official capital of Wales?</string>
+			<key>CorrectAnswer</key>
+			<string>Cardiff</string>
+			<key>Answers</key>
+			<array>
+				<string>Cardiff</string>
+				<string>Swansea</string>
+				<string>London</string>
+				<string>Newport</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CorrectAnswer</key>
+			<string>Ben Nevis</string>
+			<key>Question</key>
+			<string>Which is the highest mountain in Britain?</string>
+			<key>Answers</key>
+			<array>
+				<string>Ben Nevis</string>
+				<string>Ben Macdhui</string>
+				<string>Ben Lawers</string>
+				<string>Braeriach</string>
+			</array>
+		</dict>
+		<dict>
 			<key>CorrectAnswer</key>
 			<string>1</string>
 			<key>Question</key>
@@ -21,7 +47,7 @@
 			<key>Question</key>
 			<string>What&apos;s up?</string>
 			<key>CorrectAnswer</key>
-			<string>2015</string>
+			<string>Not much</string>
 			<key>Answers</key>
 			<array>
 				<string>Not much</string>

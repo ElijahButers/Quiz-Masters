@@ -68,6 +68,7 @@ class MultipleChoiceViewController: UIViewController {
         cardButton.isEnabled = false
         
         mcArray.shuffle()
+        answerButtons.shuffle()
         nextQuestion()
     }
 
